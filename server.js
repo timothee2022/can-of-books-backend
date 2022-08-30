@@ -10,6 +10,7 @@ const Book = require('./book.js');
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 
 const PORT = process.env.PORT || 3003;
@@ -28,6 +29,34 @@ async function getBooks(request, response, next) {
   try {
     let results = await Book.find();
     response.status(200).send(results);
+  } catch (error) {
+    next(error);
+  }
+}
+
+
+app.post('/books', postBook);
+
+async function postBook(request, response, next) {
+  console.log(request.body);
+  try {
+    const newBook = await Book.create(request.body);
+    response.status(201).send(newBook);
+  } catch (error) {
+    next(error);
+  }
+}
+
+
+app.delete('/books/:bookid', deleteBook);
+
+async function deleteBook(request, response, next) {
+  // matches the 'variable' after the colon on line 65
+  const id = request.params.bookid;
+  console.log(id);
+  try {
+    await Book.findByIdAndDelete(id);
+    response.status(204).send('Successfull!');
   } catch (error) {
     next(error);
   }
