@@ -25,9 +25,9 @@ Estimate of time needed to complete: **3**_
 
 Start time: **2pm**_
 
-Finish time: **8:30pm**_
+Finish time: **5pm**_
 
-Actual time needed to complete: **6:30h**_
+Actual time needed to complete: **3h**_
 
 Logistical
 I will be available anytime during class hours and late at night as well. Slack will be my best communication method during this week. I will be taking a 10 minutes break every hour to refresh my mind. If we start falling behind, I will be working extra hours to catch up.
